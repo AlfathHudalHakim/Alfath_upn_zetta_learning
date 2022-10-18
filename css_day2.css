@@ -1,5 +1,21 @@
+body
+{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
 img
 {
     height: 300px;
-    width: ;
+    width: 200px;
+}
+.card
+{
+    margin: 10px;
+    padding: 10px;
+    background-color: grey;
+    float:left;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
