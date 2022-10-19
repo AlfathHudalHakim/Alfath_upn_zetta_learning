@@ -2,10 +2,15 @@ body
 {
     background-color: rgb(0, 0, 0);
     color: white;
+    margin: 0;
 }
 h1
 {
     text-align: center;
+    position: sticky;
+    top: 0;
+    background-color: dimgrey;
+    margin: 0 0 4% 0;
 }
 p::first-line
 {
@@ -38,6 +43,10 @@ img
 {
     transform: scale(1.1); 
 }
+.margin-bottom
+{
+    margin-bottom: 0;
+}
 
 
 div,
@@ -47,23 +56,23 @@ div:nth-child(-n+3)
 }
 div:nth-child(n+4)
 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 div:nth-child(n+7)
 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 div:nth-child(n+10)
 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 div:nth-child(n+13)
 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 div:nth-child(n+16)
 {
