@@ -19,9 +19,14 @@ img
 }
 .card
 {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 1rem;
+
 }
+
 
 .card > div
 {
@@ -30,8 +35,6 @@ img
     text-align: center;
     border: solid;
     border-radius: 20%;
-    margin-left: 50px;
-    margin-right: 50px;
     transition: 0.2s;
 }
 .card > div:hover
@@ -40,18 +43,3 @@ img
 }
 
 
-div,
-div:nth-child(-n+3)
-{
-    margin-top: 0;
-}
-div:nth-child(n+4)
-{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-div:nth-child(n+7)
-{
-    margin-top: 0;
-    margin-bottom: 0;
-}
