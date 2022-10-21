@@ -35,12 +35,16 @@ img
     background-color: red;
     text-align: center;
     border: solid;
-    border-radius: 20%;
+    border-radius: 30%;
     transition: 0.2s;
 }
 .card > div:hover
 {
     transform: scale(1.1); 
+}
+.flex
+{
+    flex: 30.3333%;
 }
 
 
