@@ -2,29 +2,48 @@
  * @param buku 
  * @param disc
  * @param tax
+ * @param stock
+ * @param order
  */
 
-function bookPurchasing(buku, disc, tax)
-{
-    let result = 0;
-    if(buku && buku.harga)
-    {
-        const hrg = buku.harga;
-        const jlhDsc  = hrg *(disc/100);
-        const hargaDsc = hrg - jlhDsc;
-        const pjk = hargaDsc * (tax/100);
-        const hargaPjk = hargaDsc - pjk;
 
-        console.group();
-        console.log('Harga Barang : Rp.', hrg);
-        console.log('Discount', disc,'%');
-        console.log('pajak', tax,'%');
-        console.log('Harga Barang setelah discount : Rp.', hargaDsc);
-        console.log('Harga Barang dipotong pajak : Rp.', hargaPjk);
-        console.log('Harga total : Rp.', hargaPjk);
-        console.groupEnd();
+
+ function bookPurchasing(buku, disc, tax, stock, order)
+ {
+    
+     
+     for(let i = 0; i < buku.length; i++)
+     {
         
+         if(buku[i])
+         {
+             const hrg = buku[i].harga;
+             const jlhDsc  = hrg *(disc/100);
+             const hargaDsc = hrg - jlhDsc;
+             const pjk = hargaDsc * (tax/100);
+             const hargaPjk = hargaDsc - pjk;
+ 
+             console.group();
+             console.log('Harga Barang : Rp.', hrg);
+             console.log('Discount', disc,'%');
+             console.log('pajak', tax,'%');
+             console.log('Harga Barang setelah discount : Rp.', hargaDsc);
+             console.log('Harga Barang dipotong pajak : Rp.', hargaPjk);
+             console.log('Harga total : Rp.', hargaPjk);
+             console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+             console.groupEnd();
+             
+         }
+         
     }
-    return result;
-}
-bookPurchasing({judul: 'terbang', harga: 10000, printing_status: true}, 10, 10);
+     
+
+ }
+bookPurchasing([{judul: 'terbang', harga: 10000, printing_status: true},
+                {judul: 'Sherlock Holmes', harga: 80000, printing_status: true},
+                {judul: 'Detective Conan', harga: 95000, printing_status: true},
+                {judul: 'Naruto', harga: 18000, printing_status: true},
+                {judul: 'Overlord', harga: 50000, printing_status: true},
+                {judul: 'Harry Potter', harga: 100000, printing_status: true},
+                {judul: 'Lord of The Ring', harga: 120000, printing_status: true},
+                {judul: 'Narnia', harga: 97000, printing_status: true}], 10, 10);
