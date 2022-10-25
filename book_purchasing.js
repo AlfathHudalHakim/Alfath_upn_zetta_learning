@@ -49,8 +49,8 @@ function bookPurchasing(buku, disc, tax, stock, order)
     {
         PembayaranKredit.push(
             {
-                cicil: i+1,
-                harga: kreditPerBulan
+                bulan: i+1,
+                bayar: kreditPerBulan
 
             }
         )
