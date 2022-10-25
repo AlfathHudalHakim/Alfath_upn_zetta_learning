@@ -12,7 +12,7 @@ function bookPurchasing(buku, disc, tax, stock, order)
              const pjk = hargaDsc * (tax/100);
              const hargaPjk = hargaDsc - pjk;
              const hargaTtl = order * hargaPjk;
-             result += hargaPjk;
+             result += hargaTtl;
 
              price = hrg;
              amntDsc =  hargaDsc;
