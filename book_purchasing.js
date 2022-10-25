@@ -12,10 +12,10 @@
  {
     
      
-     for(let i = 0; i < buku.length; i++)
+     for(let i = 0; i < order; i++)
      {
         
-         if(buku[i])
+         if(buku[i] && (i < stock))
          {
              const hrg = buku[i].harga;
              const jlhDsc  = hrg *(disc/100);
@@ -31,8 +31,12 @@
              console.log('Harga Barang dipotong pajak : Rp.', hargaPjk);
              console.log('Harga total : Rp.', hargaPjk);
              console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+             console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
              console.groupEnd();
              
+         }
+         else {
+            console.log('Stok Barang Kosong');
          }
          
     }
@@ -46,4 +50,4 @@ bookPurchasing([{judul: 'terbang', harga: 10000, printing_status: true},
                 {judul: 'Overlord', harga: 50000, printing_status: true},
                 {judul: 'Harry Potter', harga: 100000, printing_status: true},
                 {judul: 'Lord of The Ring', harga: 120000, printing_status: true},
-                {judul: 'Narnia', harga: 97000, printing_status: true}], 10, 10);
+                {judul: 'Narnia', harga: 97000, printing_status: true}], 10, 10, 50, 10);
