@@ -1,14 +1,4 @@
-/**
- * @param buku 
- * @param disc
- * @param tax
- * @param stock
- * @param order
- */
-
-
-
- function bookPurchasing(buku, disc, tax, stock, order)
+function bookPurchasing(buku, disc, tax, stock, order)
  {
      let result = 0;
      for(let i = 0; i < order; i++)
