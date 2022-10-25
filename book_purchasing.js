@@ -16,13 +16,13 @@ function bookPurchasing(buku, disc, tax)
         const hargaPjk = hargaDsc - pjk;
 
         console.group();
-        console.log('Judul Buku :', buku.judul);
-        console.log('Harga Barang : Rp.', hrg);
-        console.log('Discount', disc,'%');
-        console.log('pajak', tax,'%');
+        console.log('Judul Buku                    :', buku.judul);
+        console.log('Harga Barang                  : Rp.', hrg);
+        console.log('Discount                      :', disc,'%');
+        console.log('pajak                         :', tax,'%');
         console.log('Harga Barang setelah discount : Rp.', hargaDsc);
-        console.log('Harga Barang dipotong pajak : Rp.', hargaPjk);
-        console.log('Harga total : Rp.', hargaPjk);
+        console.log('Harga Barang dipotong pajak   : Rp.', hargaPjk);
+        console.log('Harga total                   : Rp.', hargaPjk);
         console.groupEnd();
         
     }
