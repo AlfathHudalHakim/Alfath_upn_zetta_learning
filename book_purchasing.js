@@ -7,7 +7,7 @@
 function bookPurchasing(buku, disc, tax)
 {
     let result = 0;
-    if(buku && buku.harga)
+    if(buku && buku.harga && buku.judul)
     {
         const hrg = buku.harga;
         const jlhDsc  = hrg *(disc/100);
@@ -16,6 +16,7 @@ function bookPurchasing(buku, disc, tax)
         const hargaPjk = hargaDsc - pjk;
 
         console.group();
+        console.log('Judul Buku :', buku.judul);
         console.log('Harga Barang : Rp.', hrg);
         console.log('Discount', disc,'%');
         console.log('pajak', tax,'%');
