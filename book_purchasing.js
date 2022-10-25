@@ -1,9 +1,3 @@
-/**
- * @param buku 
- * @param disc
- * @param tax
- */
-
 function bookPurchasing(buku, disc, tax)
 {
     let result = 0;
