@@ -14,18 +14,10 @@ function bookPurchasing(buku, disc, tax, stock, order)
              const hargaTtl = order * hargaPjk;
              result += hargaTtl;
 
-             console.group();
-             console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-             console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-             console.log('Judul Buku                    :', buku.judul);
-             console.log('Harga Barang                  : Rp.', hrg);
-             console.log('Discount                      :', disc,'%');
-             console.log('pajak                         :', tax,'%');
-             console.log('Harga Barang setelah discount : Rp.', hargaDsc);
-             console.log('Harga Barang dipotong pajak   : Rp.', hargaPjk);
-             console.log('Total Pembelian               : Rp.', order);
-             console.log('Harga total                   : Rp.', hargaTtl);
-             console.groupEnd();
+             price = hrg;
+             amntDsc =  hargaDsc;
+             amntPjk =  hargaPjk;
+             Total   =  hargaTtl;
 
  
 
@@ -34,11 +26,23 @@ function bookPurchasing(buku, disc, tax, stock, order)
             console.log('Stok Buku ',buku.judul,' Kosong');
             break;
          }
-         return result;
+         
     }
 
-
+    console.group();
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+    console.log('Judul Buku                    :', buku.judul);
+    console.log('Harga Barang                  : Rp.', price);
+    console.log('Discount                      :', disc,'%');
+    console.log('pajak                         :', tax,'%');
+    console.log('Harga Barang setelah discount : Rp.', amntDsc);
+    console.log('Harga Barang dipotong pajak   : Rp.', amntPjk);
+    console.log('Total Pembelian               : Rp.', order);
+    console.log('Harga total                   : Rp.', Total);
+    console.groupEnd();
     
+    return result;
  }
 
  function Pengkreditan(result, cicil)
@@ -49,8 +53,8 @@ function bookPurchasing(buku, disc, tax, stock, order)
     {
         PembayaranKredit.push(
             {
-                bulan: i+1,
-                bayar: kreditPerBulan
+                cicil: i+1,
+                harga: kreditPerBulan
 
             }
         )
