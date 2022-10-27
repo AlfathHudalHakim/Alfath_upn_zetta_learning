@@ -1,12 +1,12 @@
-type custom = (string | number)[]
+type custom = (string | number)[];
 
 function kalimat(cases: custom): string
 {
     let result: string = '';
-    cases.map((case, i) => 
+    cases.map((text, i) => 
     {
-        result += (i? ' ':'' ) + case;
-    });
+        result += (i ? ' ':'' ) + text;
+    })
 
     return result;
 }

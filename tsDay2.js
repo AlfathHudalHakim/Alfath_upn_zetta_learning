@@ -1,14 +1,12 @@
-function kalimat(cases) {
+function ts(text1) {
     var result = '';
-    cases.map((), i);
-    {
-        result += (i ? ' ' : '') + ;
-        ;
-    }
-    ;
+    text1.map(function (text, index) {
+        result += (index ? ' ' : '') + text;
+    });
     return result;
 }
-var case1 = [1, "data", 3, "result"];
-var case2 = ["Bejo", "has", 4, "sport", "car"];
-console.log(kalimat(case1));
-console.log(kalimat(case2));
+var tes = [1, 'data', 3, 'result'];
+var tes2 = ['Bejo', 'has', 4, 'sport', 'car'];
+console.log(ts(tes));
+console.log(ts(tes2));
+
