@@ -3,18 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './button/button.component';
-import { ListComponent } from './list/list.component';
-
+import { KasirModule } from './kasir/kasir.module';
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent,
-    ListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    KasirModule
   ],
   providers: [],
   bootstrap: [AppComponent]

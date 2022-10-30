@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'kasir',
+    loadChildren:()=>import('./kasir/kasir.module').then(mod=>mod.KasirModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
