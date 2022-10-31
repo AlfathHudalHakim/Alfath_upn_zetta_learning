@@ -1,1 +1,8 @@
-<p>menu works!</p>
+<h2>List Game</h2>
+<ul>
+    <li *ngFor="let game of games" (click)="addGame(game)">
+        <h3>{{ game.name }}</h3>
+        <p>Rp. {{game.price}}</p>
+
+    </li>
+</ul>

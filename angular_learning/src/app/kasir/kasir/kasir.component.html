@@ -1,1 +1,8 @@
-<p>kasir works!</p>
+<main>
+    <section>
+        <app-menu [games]="games" (gameAdded)="addGame($event)"></app-menu>
+    </section>
+    <aside>
+        <app-payment [(games)]="selectedGames"></app-payment>
+    </aside>
+</main>
