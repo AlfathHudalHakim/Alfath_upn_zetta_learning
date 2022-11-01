@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { KasirRoutingModule } from './kasir-routing.module';
 import { KasirComponent } from './kasir/kasir.component';
-import { MenuComponent } from './menu/menu.component';
-import { PaymentComponent } from './payment/payment.component';
 import { Routes } from '@angular/router';
 
 
@@ -12,9 +10,7 @@ import { Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
-    KasirComponent,
-    MenuComponent,
-    PaymentComponent
+    KasirComponent
   ],
   imports: [
     CommonModule,

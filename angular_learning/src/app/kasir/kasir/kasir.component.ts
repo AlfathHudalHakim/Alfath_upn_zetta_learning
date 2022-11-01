@@ -1,28 +1,52 @@
 import { Component, OnInit } from '@angular/core';
+export interface Movie {title:string, director:string, cast: string, releaseDate:string }  
 
 @Component({
   selector: 'app-kasir',
   templateUrl: './kasir.component.html',
   styleUrls: ['./kasir.component.scss']
 })
+
 export class KasirComponent implements OnInit {
-  public games: Game[] = [
-    {id:'1', name: 'gta v', price: 500000},
-    {id:'2', name: 'Assassins Creed', price: 450000},
-    {id:'3', name: 'the witcher', price: 820000},
-    {id:'4', name: 'far cry', price: 550000},
-    {id:'5', name: 'fallout', price: 850000},
-    {id:'6', name: 'fifa 23', price: 760000},
-    {id:'7', name: 'DmC 5', price: 480000},
-    {id:'8', name: 'spiderman', price: 800000},
-  ]
-  public selectedGames: SelectedGame[]
+  judul: string = 'Top 5 Movies';
+
+  public movies: Movie[] = [
+    {
+      title: 'Zootopia',
+      director: 'Byron Howard, Rich Moore',
+      cast: 'Idris Elba, Ginnifer Goodwin, Jason Bateman',
+      releaseDate: 'March 4, 2016',
+    },
+    {
+      title: 'Batman v Superman: Dawn of Justice',
+      director: 'Zack Snyder',
+      cast: 'Ben Affleck, Henry Cavill, Amy Adams',
+      releaseDate: 'March 25, 2016',
+    },
+    {
+      title: 'Captain American: Civil War',
+      director: 'Anthony Russo, Joe Russo',
+      cast: 'Scarlett Johansson, Elizabeth Olsen, Chris Evans',
+      releaseDate: 'May 6, 2016',
+    },
+    {
+      title: 'X-Men: Apocalypse',
+      director: 'Bryan Singer',
+      cast: 'Jennifer Lawrence, Olivia Munn, Oscar Isaac',
+      releaseDate: 'May 27, 2016',
+    },
+    {
+      title: 'Warcraft',
+      director: 'Duncan Jones',
+      cast: 'Travis Fimmel, Robert Kazinsky, Ben Foster',
+      releaseDate: 'June 10, 2016',
+    },
+  ];
+
+
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
-  
+  ngOnInit(): void { }
 
 }

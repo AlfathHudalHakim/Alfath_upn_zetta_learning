@@ -1,8 +1,9 @@
-<main>
-    <section>
-        <app-menu [games]="games" (gameAdded)="addGame($event)"></app-menu>
-    </section>
-    <aside>
-        <app-payment [(games)]="selectedGames"></app-payment>
-    </aside>
-</main>
+<h1> {{judul}} </h1>
+<div class="container">
+  <ul>
+    
+    <li *ngFor="let movie of movies" class="card">
+      {{ movie.title }} - {{movie.director}}
+    </li>
+  </ul>
+</div>
