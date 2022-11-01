@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-export interface Movie {title:string, director:string, cast: string, releaseDate:string }  
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+export interface Game {title:string, id:string, harga:number}  
+export interface selectedGame {title:string, id:string, harga:number, jumlah:number}  
 
 @Component({
   selector: 'app-kasir',
@@ -8,43 +9,56 @@ export interface Movie {title:string, director:string, cast: string, releaseDate
 })
 
 export class KasirComponent implements OnInit {
-  judul: string = 'Top 5 Movies';
+  @Output ('gameAdded') onAddGame : EventEmitter<Game> = new EventEmitter<Game>()
 
-  public movies: Movie[] = [
+  judul: string = 'List Game';
+
+  public games: Game[] = [
     {
-      title: 'Zootopia',
-      director: 'Byron Howard, Rich Moore',
-      cast: 'Idris Elba, Ginnifer Goodwin, Jason Bateman',
-      releaseDate: 'March 4, 2016',
+      id:'1',
+      title: 'FIFA 23',
+      harga:899000
     },
     {
-      title: 'Batman v Superman: Dawn of Justice',
-      director: 'Zack Snyder',
-      cast: 'Ben Affleck, Henry Cavill, Amy Adams',
-      releaseDate: 'March 25, 2016',
+      id:'2',
+      title: 'Spiderman',
+      harga:700000
     },
     {
-      title: 'Captain American: Civil War',
-      director: 'Anthony Russo, Joe Russo',
-      cast: 'Scarlett Johansson, Elizabeth Olsen, Chris Evans',
-      releaseDate: 'May 6, 2016',
+      id:'3',
+      title: 'The Witcher 3',
+      harga:400000
     },
     {
-      title: 'X-Men: Apocalypse',
-      director: 'Bryan Singer',
-      cast: 'Jennifer Lawrence, Olivia Munn, Oscar Isaac',
-      releaseDate: 'May 27, 2016',
+      id:'4',
+      title: 'DmC 5',
+      harga:250000
     },
     {
+      id:'5',
+      title: 'GTA V',
+      harga:300000
+    },
+    {
+      id:'5',
       title: 'Warcraft',
-      director: 'Duncan Jones',
-      cast: 'Travis Fimmel, Robert Kazinsky, Ben Foster',
-      releaseDate: 'June 10, 2016',
+      harga:100000
     },
   ];
 
+  public selectedGames : selectedGame[]=[]
 
+  addGame(game :Game){
+    this.onAddGame.emit(game)
+    const duplicated =this.selectedGames.findIndex(({id})=>id===game.id)
 
+    if(duplicated>=0){
+      this.selectedGames[duplicated].jumlah +=1
+    }
+    else{
+      this.selectedGames.push({...game, jumlah: 1})
+    }
+  }
   constructor() { }
 
   ngOnInit(): void { }
