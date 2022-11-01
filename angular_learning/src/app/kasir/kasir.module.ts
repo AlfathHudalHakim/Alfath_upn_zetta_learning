@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { KasirRoutingModule } from './kasir-routing.module';
 import { KasirComponent } from './kasir/kasir.component';
 import { Routes } from '@angular/router';
+import { BayarComponent } from './bayar/bayar.component';
 
 
 
 
 @NgModule({
   declarations: [
-    KasirComponent
+    KasirComponent,
+    BayarComponent
   ],
   imports: [
     CommonModule,
