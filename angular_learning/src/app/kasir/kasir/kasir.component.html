@@ -1,1 +1,16 @@
-<p>kasir works!</p>
+<h1> {{judul}} </h1>
+  <div class="container">
+    <ul>
+      <div class="card">
+          <li *ngFor="let game of games">
+            <div>
+              <h3>{{ game.title }}</h3> <br><br> <p>Rp. {{ game.harga }}</p>
+              <button (click)="onAddGame.emit(game)">Beli</button>
+            </div>
+          </li>
+    </div>
+    </ul>
+  </div>
+  <div class="container">
+      <app-bayar></app-bayar>
+    </div>
