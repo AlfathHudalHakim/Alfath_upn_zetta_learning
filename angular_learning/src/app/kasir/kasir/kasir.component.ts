@@ -40,7 +40,7 @@ export class KasirComponent implements OnInit {
       harga:300000
     },
     {
-      id:'5',
+      id:'6',
       title: 'Warcraft',
       harga:100000
     },

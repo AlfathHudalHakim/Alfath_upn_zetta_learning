@@ -1,8 +1,29 @@
-<table border="0px">
-    <h2>Pembayaran</h2>
-    <tr *ngFor="let game of games">
-        <td>
-           {{game.jumlah}} x {{ game.harga }}
-        </td>
-    </tr>
+<h1>Pembayaran</h1>
+<table border="0px" align="center">
+    <thead>
+        <tr>
+            <th>Jumlah Barang</th>
+            <th>Harga</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let game of games">
+            <td>
+                {{game.jumlah}} 
+            </td>
+            <td>
+                Rp. {{ game.harga }} 
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>
+                Total
+            </th>
+            <td>
+                Rp. {{total}}
+            </td>
+        </tr>
+    </tfoot>
 </table>
