@@ -48,20 +48,21 @@ export class KasirComponent implements OnInit {
 
   public selectedGames : selectedGame[]=[]
 
-  addGame(game :Game){
-    this.onAddGame.emit(game)
-    const duplicated =this.selectedGames.findIndex(({id})=>id===game.id)
+  
+  constructor() { }
 
+  ngOnInit(): void { }
+
+  addGame(game :Game){
+    const duplicated =this.selectedGames.findIndex(({id})=>id===game.id)
+    let jumlah : 0;
     if(duplicated>=0){
-      this.selectedGames[duplicated].jumlah +=1
+      this.selectedGames[duplicated].jumlah+=1
     }
     else{
       this.selectedGames.push({...game, jumlah: 1})
     }
   }
-  constructor() { }
-
-  ngOnInit(): void { }
 
 }
 

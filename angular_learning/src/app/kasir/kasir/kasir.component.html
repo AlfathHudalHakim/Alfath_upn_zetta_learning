@@ -5,12 +5,12 @@
           <li *ngFor="let game of games">
             <div>
               <h3>{{ game.title }}</h3> <br><br> <p>Rp. {{ game.harga }}</p>
-              <button (click)="onAddGame.emit(game)">Beli</button>
+              <button (click)="addGame(game)">Beli</button>
             </div>
           </li>
     </div>
     </ul>
   </div>
   <div class="container">
-      <app-bayar></app-bayar>
+      <app-bayar [games]="selectedGames" (gameAdded)="addGame($event)"></app-bayar>
     </div>
