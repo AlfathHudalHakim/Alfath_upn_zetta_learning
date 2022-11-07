@@ -12,13 +12,15 @@ export class BayarComponent implements OnInit, AfterContentChecked {
 
   public total:number = 0;
 
-  constructor() { }
+  constructor() {
+    console.log('bayar constructor loaded')
+   }
 
   ngOnInit(): void {
+    console.log('bayar ngOnInit loaded')
   }
 
   ngAfterContentChecked(): void {
-    console.log("tes")
     this.total = this.games.reduce((total, game) => total += game.jumlah * game.harga , 0)
   }
 

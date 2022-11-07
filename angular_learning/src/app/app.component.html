@@ -1,4 +1,13 @@
 <h1>FrosZ Gameshop</h1>
+<div style="text-align: center;">
+    <label for="">Nama  : </label>
+    <input #Nama type="text">
+    <button (click)="InputNama(Nama.value)">input</button>
+    <h3> Selamat Datang! <br> {{Nama.value}}</h3>
+    <br>
+    <button (click)="tampilGame()">Tampilkan Game</button>
+</div>
+
 <div>
-<router-outlet></router-outlet>
+    <router-outlet *ngIf='isChild'></router-outlet>
 </div>

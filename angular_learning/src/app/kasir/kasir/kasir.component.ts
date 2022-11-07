@@ -49,9 +49,13 @@ export class KasirComponent implements OnInit {
   public selectedGames : selectedGame[]=[]
 
   
-  constructor() { }
+  constructor() {
+    console.log('kasir constructor loaded')
+   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    console.log('kasir ngOnInit loaded')
+  }
 
   addGame(game :Game){
     const duplicated =this.selectedGames.findIndex(({id})=>id===game.id)
