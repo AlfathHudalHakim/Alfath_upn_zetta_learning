@@ -2,7 +2,7 @@
   <div class="container">
     <ul>
       <div class="card">
-          <li *ngFor="let game of games">
+          <li *ngFor="let game of (games | async)">
             <div>
               <h3>{{ game.title }}</h3> <br><br> <p>Rp. {{ game.harga }}</p>
               <button (click)="addGame(game) ">Beli</button>
@@ -12,5 +12,5 @@
     </ul>
   </div>
   <div class="container">
-      <app-bayar [games]="selectedGames" (gameAdded)="addGame($event)" ></app-bayar>
+      <app-bayar ></app-bayar>
     </div>
