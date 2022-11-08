@@ -5,7 +5,8 @@
     <button (click)="InputNama(Nama.value)">input</button>
     <h3> Selamat Datang! <br> {{Nama.value}}</h3>
     <br>
-    <button (click)="tampilGame()">Tampilkan Game</button>
+    <button [routerLink]="['..','kasir']" (click)="tampil()">Tampilkan Game</button>
+    <button [routerLink]="['..','admin']" (click)="tampil()">Tampilkan Admin</button>
 </div>
 
 <div>

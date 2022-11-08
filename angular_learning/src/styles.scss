@@ -14,3 +14,21 @@ div
     margin: 2rem;
 }
 
+button {
+    display: inline-block;
+    background: rgb(207, 255, 247);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+
+li{
+    list-style-type: none;
+}

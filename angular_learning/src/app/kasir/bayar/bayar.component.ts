@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { map, Observable, pipe } from 'rxjs';
 import { kasirService, selectedGame } from '../kasir.service';
-import { Game } from '../kasir/kasir.component';
 
 @Component({
   selector: 'app-bayar',
