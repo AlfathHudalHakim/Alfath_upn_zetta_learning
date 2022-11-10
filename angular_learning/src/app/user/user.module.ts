@@ -5,7 +5,8 @@ import { UserRoutingModule } from './user-routing.module';
 import { ListComponent } from './list/list.component';
 import { CardComponent } from './card/card.component';
 import { CreateComponent } from './create/create.component';
-
+import { MatSliderModule } from '@angular/material/slider';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { CreateComponent } from './create/create.component';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    MatSliderModule,
+    MatFormFieldModule
   ]
 })
 export class UserModule { }

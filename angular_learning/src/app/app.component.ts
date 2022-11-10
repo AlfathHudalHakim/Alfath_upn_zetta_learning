@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular_learning';
+  isChild = false;
+
+  tampil(): void{
+    this.isChild = !this.isChild
+  }
 }
