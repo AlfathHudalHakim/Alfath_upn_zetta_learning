@@ -1,1 +1,24 @@
-<p>card works!</p>
+<p>
+    <mat-toolbar color="primary">
+     
+      <span>My App</span>
+      <span class="example-spacer"></span>
+        
+    </mat-toolbar>
+  </p>
+        
+  <mat-card>
+    <mat-card-content>
+        <button mat-raised-button color="warn" [routerLink]="['list']">Back</button>
+            
+        <ul> 
+            <li>   <mat-icon>account_circle</mat-icon></li>
+            <li class="str">
+                <h1>{{list?.nama | uppercase}}</h1>
+            </li>
+            <li>
+                <h2>-{{list?.posisi | uppercase}}-</h2>
+            </li>
+        </ul>
+    </mat-card-content>
+  </mat-card>

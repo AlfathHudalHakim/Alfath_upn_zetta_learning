@@ -1,26 +1,38 @@
 import { Injectable } from '@angular/core';
-export interface User {name:string, id:string, age:number, gender:string, email:string, posisi:string, status:string, alamat:string, pos:number, kota:string, negara:string}  
-import { BehaviorSubject } from "rxjs";
+export interface User {nama:string, id:string, umur:number, gender:string, email:string, posisi:string, status:string, alamatLengkap:alamat[]}
+export interface alamat { alamat:string, zip:number, kota:string, negara:string }
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private users : BehaviorSubject<User[]> = new BehaviorSubject<User[]> ([
-    {
-      name:'alfath',
-      id:'1', 
-      age:18, 
-      gender:'laki-laki', 
-      email:'dawdwad@gmail.com', 
-      posisi:'ketua', 
-      status:'jomblo', 
-      alamat:'sungai penuh', 
-      pos:37111, 
-      kota:'sungai penuh', 
-      negara:'Indonesia'
-    }
-  ]) 
+  private _users : BehaviorSubject<User[]> = new BehaviorSubject <User[]>([])
+  public users$ : Observable<User[]> 
 
-  constructor() { }
+  constructor() { 
+    this.users$ = this._users.asObservable()
+  }
+  GetUserById(id : string): User | undefined {
+    return this._users.value.find(user => user.id ===id)
+}
+
+  addUser(payload : User):void{
+    const UserIdx = this._users.value.findIndex(user => user.id ===payload.id)
+    if(UserIdx >= 0){
+        this._users.value.splice(UserIdx,1,payload)
+    }
+    else{
+        this._users.value.push(payload)
+    }
+    console.log(this._users);
+    
+}
+
+getListById(id:string) : any{
+    const listarray = this._users.getValue();
+    console.log(listarray)
+    const list = listarray.find(list => list.id ===id)
+    return list || null;
+  }
 }

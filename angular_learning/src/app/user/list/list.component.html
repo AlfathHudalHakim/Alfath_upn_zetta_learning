@@ -1,2 +1,36 @@
-<app-card></app-card>
-<app-create></app-create>
+<p>
+    <mat-toolbar color="primary">
+     
+      <span>My App</span>
+      <span class="example-spacer"></span>
+        <button mat-raised-button   [routerLink]="['..','create' ]" >Tambah User</button>
+    </mat-toolbar>
+  </p>
+<h1>List User</h1>
+ <ng-template  *ngIf="(list| async)!.length>0 ; else kosong"></ng-template>
+
+   <div class="container">
+    <mat-card   *ngFor = "let list of (list| async)">
+        <mat-card-content>
+            <mat-icon>account_circle</mat-icon>
+            <h2>{{list.nama}}</h2>
+            <span>{{list.posisi}}</span>
+            <table>
+                <tr>
+                    <td >
+                        <a  [routerLink]="['..','detail',list.id]" id="dtl">Detail</a>
+                    </td>
+                    <td>
+                        <a [routerLink]="['..','edit' ,list.id]"  id="ubah">Ubah</a>
+                    </td>
+                </tr>
+            </table>
+           
+        </mat-card-content>
+    </mat-card>
+   </div>
+   <ng-template #kosong>
+    <h3>User Tidak Ditemukan!</h3>
+   </ng-template>
+   
+       

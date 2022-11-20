@@ -1,7 +1,73 @@
-<form action="">
-    <mat-form-field appearance="fill">
-        <mat-label>Input</mat-label>
-        <input matInput>
-    </mat-form-field>
-</form>
-<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+<br><br>
+<button mat-raised-button color="warn" [routerLink]="['..','list']">Back</button>
+<mat-card class="example-card">
+  <h1>Isi Data Diri</h1>
+    <mat-card-content class="all">
+        <form [formGroup]="form"  >
+            <mat-form-field  class="example-full-width">
+                <mat-label>ID</mat-label>
+                <input type="text" matInput formControlName="id">
+                <mat-hint>ex : 1 </mat-hint>
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Nama</mat-label>
+                <input type="text" matInput formControlName="nama">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width" >
+                <mat-label>Email</mat-label>
+                <input type="text" matInput formControlName="email">
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Umur</mat-label>
+                <input type="text" matInput formControlName="umur">
+            </mat-form-field><br>
+                <mat-radio-group aria-label="Select an option" formControlName="gender">
+                    <mat-label>Jenis Kelamin</mat-label>
+                    <mat-radio-button value="Pria">Pria</mat-radio-button>
+                    <mat-radio-button value="Wanita">Wanita</mat-radio-button>
+                  </mat-radio-group><br>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Posisin</mat-label>
+                    <mat-select formControlName="position">
+                      <mat-option value="Management">  Management  </mat-option>
+                      <mat-option value="Admin">  Admin  </mat-option>
+                      <mat-option value="Pegawai"> Pegawai  </mat-option>
+                    </mat-select>
+                  </mat-form-field><br>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Status Pernikahan</mat-label>
+                    <mat-select formControlName="marital">
+                      <mat-option value="Menikah">  Menikah  </mat-option>
+                      <mat-option value="Single">  Single  </mat-option>
+                    </mat-select>
+                  </mat-form-field><br>
+                  <ul formArrayName = "alamatLengkap">
+                    <li *ngFor = "let group of alamat.controls; let idx = index" [formGroupName]="idx">
+                        <mat-form-field  class="example-full-width">
+                            <mat-label>Alamat</mat-label>
+                            <input type="text" matInput formControlName="alamat">
+                        </mat-form-field>
+                        <mat-form-field   class="half" >
+                            <mat-label>Kode Pos</mat-label>
+                            <input type="text" matInput formControlName="zip">
+                        </mat-form-field>
+                        <mat-form-field  class="half"  >
+                            <mat-label>Kota</mat-label>
+                            <input type="text" matInput formControlName="kota">
+                        </mat-form-field>
+                        <mat-form-field  class="half" id="end">
+                            <mat-label>Negara</mat-label>
+                            <input type="text" matInput formControlName="negara">
+                        </mat-form-field>
+                    </li>
+                  </ul>
+        </form>
+    </mat-card-content>
+    <button mat-raised-button   [routerLink]="['..','list' ]" (click)="submit()" class="sbm">Submit</button>
+  </mat-card>
+  <div class="butt">
+      
+  </div>
